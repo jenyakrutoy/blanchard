@@ -3,7 +3,7 @@
 
 ## Ссылки
 
-* [Деплой](https://jenyakrutoy/github.io/blanchard/build)
+* [Деплой](https://jenyakrutoy.github.io/blanchard/build)
 * [Репозиторий](https://github.com/jenyakrutoy/blanchard)
 * [Макет](https://www.figma.com/file/T3alqkMqoaTWW6WLoR99LO/Blanchard-(Copy)?type=design&node-id=0-1&mode=design&t=jUaooUtqQpCGqbSm-0)
 
