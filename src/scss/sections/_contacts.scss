@@ -1,0 +1,380 @@
+.contacts {
+  // .contacts__container
+  &__container {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    padding: 38px 20px;
+
+    @media (max-width: 1440px) {
+      padding: 38px 20px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 30px;
+    }
+
+    @media (max-width: 1024px) {
+      padding: 43px 50px;
+    }
+
+    @media (max-width: 768px) {
+      gap: 19px;
+    }
+
+    @media (max-width: 576px) {
+      margin-bottom: 20px;
+    }
+  }
+
+  // .contacts__wrap
+  &__wrap {
+    border: 1px solid #cacaca;
+
+    @media (max-width: 576px) {
+      border: none;
+    }
+  }
+
+  // .contacts__about
+  &__about {
+    flex: 1 1 12%;
+    margin-top: -7px;
+
+    @media (max-width: 1440px) {
+      margin-top: 0;
+    }
+  }
+
+  // .contacts__title
+  &__title {
+    margin-bottom: 6px;
+    color: $dark-grey;
+
+    @media (max-width: 576px) {
+      font-size: 18px;
+      line-height: 25px;
+    }
+  }
+
+  // .contacts__adress
+  &__adress {
+    @media (max-width: 576px) {
+      font-size: 14px;
+      line-height: 19px;
+    }
+  }
+
+  // .contacts__social
+  &__social {
+    flex: 1 1 13.3%;
+  }
+
+  // .contacts__text
+  &__text {
+    margin-bottom: 5px;
+
+    @media (max-width: 576px) {
+      font-size: 18px;
+      line-height: 32px;
+    }
+  }
+
+  // .contacts__links
+  &__links {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  // .contacts__link
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 39px;
+    border-radius: 50px;
+    transition: opacity 0.2s ease-in-out, outline 0.2s ease-in-out;
+
+    &:hover {
+      opacity: 0.5;
+    }
+
+    &:active {
+      outline: 2px solid $purple;
+      opacity: 1;
+      transition: opacity 0.2s ease-in-out, outline 0.2s ease-in-out;
+    }
+
+    &:focus-visible {
+      opacity: 0.5;
+      outline: none;
+    }
+
+    @media (max-width: 576px) {
+      width: 50px;
+      height: 49px;
+    }
+  }
+
+  // .contacts__svg
+  &__svg {
+    width: 22px;
+    height: 22px;
+
+    @media (max-width: 576px) {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  // .contacts__link-whatsapp
+  &__link-whatsapp {
+    background-color: #30bf39;
+  }
+
+  // .contacts__link-telegram
+  &__link-telegram {
+    background-color: #26a5e4;
+
+    // .contacts__svg
+    .contacts__svg {
+      padding-top: 1px;
+      padding-right: 1px;
+
+      @media (max-width: 576px) {
+        padding-top: 1px;
+        padding-right: 2px;
+      }
+    }
+  }
+}
+
+.contacts-form {
+  flex: 1 1 55.8%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 18px;
+
+  @media (max-width: 1440px) {
+    width: 83%;
+  }
+
+  @media (max-width: 1024px) {
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    row-gap: 14px;
+  }
+
+  @media (max-width: 576px) {
+    row-gap: 21px;
+  }
+
+  // .contacts-form__elem
+  &__elem {
+    flex-basis: 30%;
+    position: relative;
+    border-radius: 100px;
+
+    // .form__elem  .js-validate-error-label
+    .js-validate-error-label {
+      position: absolute;
+      top: -15px;
+      left: 25px;
+      font-weight: 400;
+      font-size: 11px;
+      line-height: 11px;
+      color: #d11616 !important;
+      animation: 0.5s fadeIn ease-in-out;
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    }
+
+    @media (max-width: 1024px) {
+      flex-basis: 48%;
+    }
+
+    @media (max-width: 576px) {
+      flex-basis: 100%;
+    }
+  }
+
+  // .contacts-form__input
+  &__input {
+    min-height: 100%;
+    width: 100%;
+    padding: 9px 24px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 32px;
+    border: 1px solid $black;
+    color: $black;
+    caret-color: $black;
+    background-color: $white;
+    outline: none;
+    border-radius: 100px;
+    transition: background-color 0.2s ease-in-out;
+
+    // .contacts-form__input.js-validate-error-field
+    &.js-validate-error-field {
+      border-color: #d11616 !important;
+      transition: border-color 0.2s ease-in-out;
+    }
+
+    &:hover {
+      background-color: #ececec;
+    }
+
+    &:focus-visible {
+      background-color: #ececec;
+    }
+
+    &:active {
+      background-color: $white;
+    }
+
+    // .studio__input:active::placeholder {
+    &:active::placeholder {
+      color: $black;
+    }
+
+    @media (max-width: 576px) {
+      padding: 3px 24px;
+    }
+  }
+
+  // .contacts-form__btn
+  &__btn:hover {
+    background-color: $purple;
+    color: $white;
+  }
+
+  // .contacts-form__btn
+  // .contacts-form__btn-mobile
+  &__btn,
+  &__btn-mobile {
+    flex-basis: 36%;
+    padding: 13px 15px;
+    font-family: $font-Bold;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    color: $purple;
+    background-color: $white;
+    border: 2px solid $purple;
+    border-radius: 100px;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+
+    &:active {
+      background-color: $purple;
+      color: $white;
+    }
+
+    &:focus-visible {
+      background-color: $purple;
+      color: $white;
+    }
+
+    @media (max-width: 1024px) {
+      display: none;
+    }
+  }
+
+  // .contacts-form__btn-mobile
+  &__btn-mobile {
+    display: none;
+
+    @media (max-width: 1024px) {
+      display: flex;
+      flex-basis: 48%;
+    }
+
+    @media (max-width: 576px) {
+      flex-basis: 44%;
+      padding: 11px 15px;
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+}
+
+.contacts-map {
+  position: relative;
+  height: 700px;
+  max-height: 100%;
+
+  @media (max-width: 576px) {
+    height: 320px;
+  }
+
+  // .contacts-map__content
+  &__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// !/* ==========================карта (удаление лишнего) + СЕРЫЙ ФОН===========================================*/
+
+[class*="copyrights-pane"] {
+  display: none !important;
+}
+
+[class*="ground-pane"] {
+  filter: grayscale(1);
+}
+
+// ! ============================позиционирование всего зума==========================
+
+.ymaps-2-1-79-controls__control {
+  inset: 268px 17px auto auto !important;
+}
+
+// ! ==================================высота в зуме==================================
+
+.ymaps-2-1-79-zoom {
+  height: 9px !important;
+}
+
+// ! ===========================вертикальная полоска в зуме===========================
+
+.ymaps-2-1-79-zoom__scale {
+  display: none;
+}
+
+// ! ===========================кнопки===========================
+
+.ymaps-2-1-79-float-button {
+  @media (max-width: 1024px) {
+    display: none !important;
+  }
+}
+
+// ! ===========================кнопка геопозиции===========================
+
+.ymaps-2-1-79-controls__control_toolbar {
+  position: absolute !important;
+  top: 348px !important;
+  right: 17px !important;
+  margin-left: 0 !important;
+
+  @media (max-width: 1024px) {
+    display: none !important;
+  }
+}

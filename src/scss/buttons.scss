@@ -1,0 +1,65 @@
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $white;
+  outline: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, outline 0.2s ease-in-out;
+
+  &:active {
+    color: $dark-purple;
+  }
+
+  &:focus-visible {
+    background-color: $dark-purple;
+  }
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $white;
+  outline: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, outline 0.2s ease-in-out;
+}
+
+.btn-transparent {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 22px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19px;
+  color: var(--white);
+  background-color: var(--orange);
+  border: 3px solid var(--orange);
+  outline: none;
+  cursor: pointer;
+  transition: background-color 0.2s linear, outline 0.1s linear;
+
+  // .btn-transparent:focus-visible
+  &:focus-visible {
+    background-color: var(--dark-orange);
+  }
+
+  // .btn-transparent:hover
+  &:hover {
+    background-color: var(--orange);
+  }
+
+  // .btn-transparent:active
+  &:active {
+    background-color: var(--pink2);
+    border: 3px solid var(--pink2);
+  }
+}
+
+

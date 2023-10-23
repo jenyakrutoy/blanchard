@@ -1,0 +1,603 @@
+.catalog {
+  padding: 81px 0 80px;
+
+  @media (max-width: 768px) {
+    padding: 80px 0 80px;
+  }
+
+  @media (max-width: 576px) {
+    padding: 51px 0 48px;
+  }
+
+  // .catalog__title
+  &__title {
+    margin-bottom: 16px;
+    color: $dark-grey;
+
+    @media (max-width: 576px) {
+      margin-bottom: 12px;
+    }
+  }
+
+  // .catalog__text
+  &__text {
+    max-width: 1080px;
+    margin-bottom: 39px;
+    @include text;
+
+    @media (max-width: 768px) {
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 576px) {
+      display: none;
+    }
+  }
+
+  // .catalog__wrap
+  &__wrap {
+    display: flex;
+
+    @media (max-width: 768px) {
+      flex-direction: column-reverse;
+    }
+  }
+
+  // .catalog__item-1
+  &__item-1 {
+    // margin-right: 50px;
+    margin-right: 2%;
+    flex: 0 0 48.3%;
+
+    @media (max-width: 1024px) {
+      margin-right: 3%;
+      flex: 0 0 50%;
+    }
+
+    @media (max-width: 768px) {
+      margin-right: 0;
+    }
+  }
+
+  // .catalog__item
+  &__item-1 {
+    position: relative;
+  }
+
+  // .catalog__item-2
+  &__item-2 {
+    flex: 0 0 49.7%;
+
+    @media (max-width: 1024px) {
+      flex: 0 1050%;
+    }
+
+    @media (max-width: 768px) {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.catalog-artist {
+  display: none;
+
+  // .catalog-artist-active
+  &-active {
+    display: block;
+  }
+
+  // .catalog-artist__img-wrap
+  &__img-wrap {
+    margin-bottom: 31px;
+
+    @media (max-width: 768px) {
+      margin-bottom: 20px;
+    }
+  }
+
+  // .catalog-artist__img
+  &__img {
+    display: block;
+
+    @media (max-width: 576px) {
+      margin: 0 auto;
+    }
+  }
+
+  // .catalog-artist__caption
+  &__caption {
+    margin-bottom: 8px;
+    color: $dark-grey;
+
+    @media (max-width: 576px) {
+      text-align: center;
+    }
+  }
+
+  // .catalog-artist__time
+  &__time {
+    margin-bottom: 15px;
+    font-family: $font-regular;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: $light-grey;
+
+    @media (max-width: 768px) {
+      margin-bottom: 8px;
+    }
+
+    @media (max-width: 576px) {
+      margin-bottom: 15px;
+      text-align: center;
+    }
+  }
+
+  // .catalog-artist__descr
+  &__descr {
+    max-width: 750px;
+    font-family: $font-regular;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 32px;
+    color: $dark-grey;
+
+    @media (max-width: 576px) {
+      max-width: 290px;
+      margin: 0 auto 10px;
+      text-align: center;
+    }
+  }
+
+  // .catalog-artist__img-wrap-background
+  &__img-wrap-background {
+    padding: 36px 0;
+    background-color: #ececec;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    @media (max-width: 576px) {
+      padding: 0;
+      padding-bottom: 16px;
+    }
+  }
+
+  // .catalog-artist__svg
+  &__svg {
+    max-width: 285px;
+    min-height: 201px;
+  }
+
+  // .catalog-artist__link
+  &__link {
+    padding: 3px;
+    margin: -3px;
+    font-family: $font-SemiBold;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    border-bottom: 1px solid transparent;
+    color: $purple;
+    outline: none;
+    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-bottom 0.2s ease-in-out;
+
+    @media (max-width: 576px) {
+      display: block;
+      text-align: center;
+    }
+
+    // .catalog-artist__link:hover
+    &:hover {
+      color: $dark-purple;
+      border-bottom: 1px solid $dark-purple;
+    }
+
+    // .catalog-artist__link:active
+    &:active {
+      color: $dark-grey;
+      border-bottom: 1px solid $dark-grey;
+    }
+
+    // .catalog-artist__link:focus-visible
+    &:focus-visible {
+      background-color: $purple;
+      color: $white;
+
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: 1px;
+        left: 0;
+        width: 100%;
+        border-bottom: 1px solid $white;
+        transition: border-bottom 0.2s ease-in-out;
+      }
+    }
+  }
+}
+
+.catalog-artist-unknown {
+  display: none;
+  transition: transform 0.2s ease-in-out;
+
+  // .catalog-artist-unknown-active
+  &-active {
+    display: block;
+    width: 97%;
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+  }
+
+  // .catalog-artist-unknown__span
+  &__span {
+    padding-top: 5px;
+    font-family: $font-SemiBold;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 33px;
+    text-align: center;
+    color: $grey;
+  }
+
+  // .catalog-artist-unknown__descr
+  &__descr {
+    margin-bottom: 15px;
+  }
+}
+
+.catalog-accordion {
+  // .catalog-accordion__caption
+  &__caption {
+    font-family: $font-SemiBold;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    color: $dark-grey;
+
+    @media (max-width: 576px) {
+      font-size: 18px;
+    }
+  }
+
+  // .catalog-accordion__arrow
+  &__arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+
+    @media (max-width: 576px) {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  // .catalog-accordion__svg
+  &__svg {
+    width: 21px;
+    height: 17px;
+
+    @media (max-width: 576px) {
+      width: 11px;
+      height: 15px;
+    }
+  }
+
+  // .catalog-accordion__wrap
+  &__wrap {
+    padding: 30px 0;
+
+    @media (max-width: 576px) {
+      padding: 25px 0;
+    }
+  }
+
+  // .catalog-accordion__list
+  &__list {
+    display: grid;
+    grid-template-columns: 257px 239px 239px;
+    grid-template-rows: repeat(8, 32px);
+    grid-auto-rows: 32px;
+    grid-auto-flow: row;
+    align-items: center;
+    list-style: none;
+
+    @media (max-width: 1440px) {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: repeat(12, 32px);
+      grid-auto-rows: 32px;
+    }
+
+    @media (max-width: 1024px) {
+      grid-template-rows: repeat(12, 1fr);
+      column-gap: 3%;
+      row-gap: 5px;
+    }
+
+    @media (max-width: 768px) {
+      grid-template-rows: repeat(8, 32px);
+      grid-auto-rows: 32px;
+    }
+
+    @media (max-width: 576px) {
+      grid-template-rows: repeat(23, 17px);
+      grid-auto-rows: 17px;
+      grid-template-columns: 1fr;
+      justify-items: start;
+      align-items: start;
+    }
+  }
+
+  // .catalog-accordion__item
+  &__item {
+    margin-right: 5%;
+
+    @media (max-width: 1024px) {
+      margin-right: 0;
+    }
+  }
+
+  // .catalog-accordion__btn
+  &__btn {
+    display: inline-flex;
+    justify-content: flex-start;
+    font-family: $font-regular;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: left;
+    color: $dark-grey;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom 0.2s ease-in-out, color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+
+    @media (max-width: 1024px) {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    // .catalog-accordion__btn:hover
+    &:hover {
+      border-bottom: 1px solid $purple;
+    }
+
+    // .catalog-accordion__btn:active
+    &:active {
+      color: $dark-grey;
+      border-bottom: 1px solid transparent;
+    }
+
+    // .catalog-accordion__btn:focus-visible
+    &:focus-visible {
+      background-color: $purple;
+    }
+  }
+}
+
+.catalog-accordion-void {
+  display: flex;
+  align-items: center;
+
+  // .catalog-accordion-void__left
+  &__left {
+    width: 251px;
+    height: 165px;
+    margin-left: 14px;
+    margin-right: 48px;
+    background-color: $light-grey;
+    outline: 2px solid $light-grey;
+    outline-offset: 12px;
+
+    @media (max-width: 1024px) {
+      width: 173px;
+      height: 114px;
+      margin-right: 33px;
+      margin-left: 10px;
+      outline-offset: 8px;
+    }
+
+    @media (max-width: 576px) {
+      width: 118px;
+      height: 79px;
+      margin-left: 8px;
+      outline-offset: 6px;
+    }
+  }
+
+  // .catalog-accordion-void__right
+  &__right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  // .catalog-accordion-void__subject
+  &__subject {
+    max-width: 265px;
+    margin-bottom: 5px;
+    font-family: $font-SemiBold;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    color: $dark-grey;
+
+    @media (max-width: 576px) {
+      font-size: 18px;
+    }
+  }
+
+  // .catalog-accordion-void__text
+  &__text {
+    max-width: 275px;
+    margin-bottom: 5px;
+    font-family: $font-regular;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: $dark-grey;
+  }
+
+  // .catalog-accordion-void__link
+  &__link {
+    max-width: 90px;
+    position: relative;
+    align-self: flex-start;
+    padding: 3px;
+    margin: -3px;
+    font-family: $font-SemiBold;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    color: $purple;
+    outline: none;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom 0.2s ease-in-out, color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+
+    // .catalog-accordion__link:hover
+    &:hover {
+      color: $dark-purple;
+      border-bottom: 1px solid $dark-purple;
+    }
+
+    // .catalog-accordion__link:active
+    &:active {
+      color: $dark-grey;
+      border-bottom: 1px solid $dark-grey;
+    }
+
+    // .catalog-accordion__link:focus-visible
+    &:focus-visible {
+      background-color: $purple;
+      color: $white;
+      transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: 1px;
+        left: 0;
+        width: 100%;
+        border-bottom: 1px solid $white;
+        transition: border-bottom 0.2s ease-in-out;
+      }
+    }
+  }
+}
+
+// ! ===================================аккордеон============================
+
+// ! =====================невидимкая иконка в заголовке аккордиона ============================
+
+.ui-state-active .ui-icon,
+.ui-button:active .ui-icon,
+.ui-icon-triangle-1-e {
+  display: none;
+}
+
+// ! ============================ default  ============================
+.ui-state-default {
+  position: relative;
+  width: 100%;
+  padding: 32px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: -1px;
+  border: none;
+  border-top: 1px solid #cacaca;
+  border-bottom: 1px solid #cacaca;
+  outline: none;
+  cursor: pointer;
+
+  @media (max-width: 576px) {
+    padding: 20px 0;
+  }
+
+  .catalog-accordion__caption {
+    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  }
+
+  .catalog-accordion__arrow {
+    background-color: #ececec;
+    transition: transform 0.2s ease-in-out, border 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  }
+
+  .catalog-accordion__svg path {
+    stroke: $black;
+  }
+}
+
+// ! ============================ hover ============================
+
+.ui-state-hover {
+  border-top: 1px solid $purple;
+  border-bottom: 1px solid $purple;
+  z-index: 4;
+
+  .catalog-accordion__caption {
+    color: $purple;
+  }
+
+  .catalog-accordion__arrow {
+    background-color: $very-light-purple;
+    transition: transform 0.2s ease-in-out, outline 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  }
+}
+
+// ! ============================ active ============================
+
+.ui-state-active {
+  border-top: 1px solid $dark-purple;
+  border-bottom: 1px solid $dark-purple;
+
+  .catalog-accordion__caption {
+    color: $dark-purple;
+    background-color: $white;
+  }
+
+  .catalog-accordion__arrow {
+    background-color: $very-light-purple;
+    // outline: 2px solid $purple;
+    border: 2px solid $purple;
+    transform: rotate(180deg);
+    transition: transform 0.2s ease-in-out, border 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  }
+}
+
+// ! ============================ active:active ============================
+
+.ui-state-default:active {
+  border-top: 1px solid $dark-purple;
+  border-bottom: 1px solid $dark-purple;
+
+  .catalog-accordion__caption {
+    color: $dark-purple;
+    background-color: $white;
+  }
+
+  .catalog-accordion__arrow {
+    background-color: $very-light-purple;
+    border: 2px solid $purple;
+    transform: none;
+    transition: transform 0.2s ease-in-out, border 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  }
+}
+
+// ! =========================== focus:focus-visible ============================
+
+.ui-state-focus:focus {
+  .catalog-accordion__caption {
+    color: $white;
+    background-color: $purple;
+  }
+
+  .catalog-accordion__arrow {
+    background-color: $very-light-purple;
+    transition: transform 0.2s ease-in-out, outline 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  }
+}

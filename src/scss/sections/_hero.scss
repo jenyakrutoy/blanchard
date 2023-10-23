@@ -1,0 +1,221 @@
+.hero-swiper {
+  position: relative;
+  padding: 234px 0 103px;
+
+  @media (max-width: 1024px) {
+    padding: 205px 0 95px;
+  }
+
+  @media (max-width: 576px) {
+    padding: 74px 0 47px;
+  }
+
+  // .hero-swiper__inner
+  &__inner {
+    position: relative;
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  // .hero-swiper__title
+  &__title {
+    margin-bottom: -4px;
+    max-width: 597px;
+    font-family: $font-Bold;
+    font-weight: 700;
+    font-size: 72px;
+    word-break: break-word;
+    line-height: 98px;
+    color: white;
+
+    @media (max-width: 1024px) {
+      margin-bottom: -11px;
+    }
+
+    @media (max-width: 576px) {
+      margin-bottom: 2px;
+      font-size: 32px;
+      line-height: 44px;
+      text-align: center;
+    }
+  }
+
+  // .hero-swiper__subtitle
+  &__subtitle {
+    max-width: 579px;
+    margin-bottom: 92px;
+    font-family: $font-Bold;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 30px;
+    color: white;
+
+    @media (max-width: 1024px) {
+      max-width: 670px;
+      margin-bottom: 134px;
+    }
+
+    @media (max-width: 576px) {
+      max-width: 281px;
+      margin: 0 auto 42px;
+      font-family: $font-regular;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 16px;
+      text-align: center;
+    }
+  }
+
+  // .hero-swiper__btn
+  &__btn {
+    max-width: 314px;
+    margin-bottom: 20px;
+    padding: 22px 35px;
+    font-family: $font-Bold;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 25px;
+    color: $white;
+    background-color: $purple;
+    border-radius: 100px;
+    pointer-events: auto;
+    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, outline 0.1s ease-in-out;
+
+    &:hover {
+      @media (min-width: 991px) {
+        outline: 2px solid $very-light-purple;
+      }
+    }
+
+    &:active {
+      color: $white;
+      background-color: $dark-purple;
+    }
+
+    &:focus-visible {
+      outline: 3px solid $light-purple;
+      outline-offset: 2px;
+    }
+
+    @media (max-width: 576px) {
+      margin: 0 auto 20px;
+      padding: 11px 17px;
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+
+  // .hero-swiper__btn-email
+  .hero-swiper__btn-email {
+    position: relative;
+    max-width: 314px;
+    margin-bottom: 20px;
+    pointer-events: auto;
+    border-radius: 30px;
+    overflow: hidden;
+    transform: rotate(0) translate(0, 0);
+    transition: all 0.2s ease-in-out;
+
+    @media (max-width: 576px) {
+      margin: 0 auto 20px;
+    }
+
+    // .hero-swiper__btn-email:hover
+    &:hover {
+      border-radius: 10px;
+      transition: all 0.2s ease-in-out;
+      box-shadow: 0 0 40px rgba(73, 115, 255, 0.6);
+
+      // .hero-swiper__btn-email:hover  .hero-swiper__btn-email-waves
+      .hero-swiper__btn-email-waves {
+        top: -50px;
+      }
+    }
+
+    // .hero-swiper__btn-email-text
+    &-text {
+      position: relative;
+      z-index: 1;
+      padding: 22px 35px;
+      font-family: $font-Bold;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 25px;
+      color: $white;
+
+      @media (max-width: 576px) {
+        padding: 11px 17px;
+        font-size: 12px;
+        line-height: 16px;
+      }
+    }
+
+    // .hero-swiper__btn-email-waves
+    &-waves {
+      position: absolute;
+      width: 314px;
+      height: 300px;
+      background-color: #4973ff;
+      background-color: $black;
+      top: 0;
+      left: 0;
+      box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+      transition: all 0.2s ease-in-out;
+
+      // .hero-swiper__btn-email-waves::before
+      // .hero-swiper__btn-email-waves::after
+      &:before,
+      &:after {
+        content: "";
+        position: absolute;
+        top: -20px;
+        left: 50%;
+        width: 250%;
+        height: 330%;
+        height: 250%;
+        transform: translate3d(-50%, -96%, 0) rotate(0deg) scale(1);
+      }
+
+      // .hero-swiper__btn-email-waves::before
+      &:before {
+        background-color: #000;
+        border-radius: 48%;
+        animation: waves 3s infinite linear;
+      }
+
+      // .hero-swiper__btn-email-waves::after
+      &:after {
+        background-color: rgba(0, 0, 0, 0.5);
+        background-color: $purple;
+        border-radius: 46%;
+        animation: waves 6s infinite linear;
+      }
+
+      @keyframes waves {
+        0% {
+          transform: translate3d(-50%, -96%, 0) rotate(0deg) scale(1);
+        }
+        100% {
+          transform: translate3d(-50%, -96%, 0) rotate(360deg) scale(1);
+        }
+      }
+    }
+  }
+
+  // .hero-swiper__container
+  &__container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  // .hero-swiper__slide
+  &__slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

@@ -1,0 +1,155 @@
+@import "normalize";
+@import "fonts";
+@import "variables";
+@import "mixins";
+@import "buttons";
+@import "burger";
+@import "swiper";
+@import "choises";
+@import "popup";
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+// скрываем alt
+img:not([src]) {
+  visibility: hidden;
+}
+
+body {
+  min-width: 100%;
+  min-height: 100%;
+  font-family: $font-regular;
+  font-weight: 400;
+  overflow-x: hidden;
+}
+
+.logo {
+  height: 43px;
+  max-height: 100%;
+  outline: none;
+  transition: outline 0.2s ease-in-out;
+
+  &:focus-visible {
+    outline: 2px solid $dark-purple;
+    outline-offset: 5px;
+  }
+}
+
+.logo-svg {
+  max-width: 173px;
+  height: 100%;
+  object-fit: contain;
+
+  path {
+    fill: $white;
+  }
+
+  @media (max-width: 1440px) {
+    max-width: 150px;
+  }
+
+  @media (max-width: 1024px) {
+    max-width: 190px;
+  }
+
+  @media (max-width: 576px) {
+    max-width: 96px;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
+
+.container {
+  max-width: 1640px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  @media (max-width: 1440px) {
+    padding: 0 15px;
+  }
+
+  @media (max-width: 1024px) {
+    padding: 0 50px;
+  }
+
+  @media (max-width: 576px) {
+    padding: 0 10px;
+  }
+}
+
+.title-h2 {
+  max-width: 380px;
+  font-family: $font-regular;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 65px;
+
+  @media (max-width: 576px) {
+    font-size: 28px;
+    line-height: 38px;
+  }
+}
+
+.title-h3 {
+  font-family: $font-SemiBold;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 33px;
+}
+
+// !/* =======================================валидация===========================================*/
+
+.js-validate-error-label {
+  position: absolute;
+  top: 3px;
+  left: 23px;
+  font-weight: 400;
+  font-size: 9px;
+  line-height: 11px;
+}
+
+
+
+// !/* ===================================================скролл===========================================*/
+
+@import "simplebar";
+@import "scroll";
+@import "sections/_header";
+@import "sections/_hero";
+@import "sections/_about";
+@import "sections/_gallery";
+@import "sections/_catalog";
+@import "sections/_events";
+@import "sections/_projects";
+@import "sections/_contacts";
+@import "sections/_footer";

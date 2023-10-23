@@ -1,0 +1,493 @@
+#gallery.lazy {
+  background-image: none;
+}
+
+.gallery {
+  padding: 80px 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @media (max-width: 320px) {
+    padding: 50px 0 27px;
+  }
+
+  // .gallery__wrap
+  &__wrap {
+    display: flex;
+    max-width: 100%;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+  }
+
+  // .gallery__item
+  &__item {
+    @media (max-width: 768px) {
+      flex: auto;
+    }
+  }
+
+  // .gallery__item-1
+  &__item-1 {
+    display: flex;
+    flex-direction: column;
+    margin-right: 50px;
+    flex: 0 1 27.8%;
+
+    @media (max-width: 1024px) {
+      flex: 0 1 40.8%;
+    }
+
+    @media (max-width: 768px) {
+      max-width: 281px;
+      margin-bottom: 24px;
+      margin-right: 0;
+    }
+
+    @media (max-width: 576px) {
+      max-width: 100%;
+      margin-bottom: 38px;
+    }
+  }
+
+  // .gallery__item-2
+  &__item-2 {
+    min-width: 0;
+    flex: 0 1 80%;
+
+    @media (max-width: 1024px) {
+      flex: 0 1 87%;
+    }
+  }
+
+  // .gallery__title
+  &__title {
+    margin-bottom: 16px;
+    color: $white;
+
+    @media (max-width: 576px) {
+      margin-bottom: 12px;
+    }
+  }
+
+  // ! ========================================= селект =========================================
+
+  .gallery-select {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: auto;
+
+    @media (max-width: 768px) {
+      margin-bottom: 48px;
+    }
+
+    @media (max-width: 576px) {
+      margin-bottom: 38px;
+    }
+
+    // .gallery-select__caption
+    &__caption {
+      margin-bottom: 10px;
+      font-family: $font-SemiBold;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 32px;
+      color: $white;
+
+      @media (max-width: 576px) {
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  // ! старотовый селект (оболочка c фокусом)
+  .choices[data-type*="select-one"].is-focused {
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: background-color 0.2s ease-in-out;
+  }
+
+  //  ! старотовый селект (оболочка)
+  // .choices__inner
+  .choices[data-type*="select-one"] .choices__inner {
+    min-height: auto;
+    padding: 0;
+    padding-bottom: 0;
+    font-family: $font-regular;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 32px;
+    border-radius: 6px;
+    border: 1px solid $white;
+    outline: none;
+    color: $white;
+    background-color: transparent;
+    appearance: none;
+    transition: background-color 0.2s ease-in-out;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      transition: background-color 0.2s ease-in-out;
+    }
+
+    &:focus-visible {
+      background-color: rgba(255, 255, 255, 0.2);
+      transition: background-color 0.2s ease-in-out;
+    }
+  }
+
+  // старотовый селект
+  .choices__list--single {
+    padding: 3px 30px 2px 15px;
+  }
+
+  // старотовый селект, когда селекты открываются
+  .choices.is-focused.is-open .choices__inner {
+    border-radius: 6px;
+  }
+
+  // иконка
+  .choices[data-type*="select-one"]::after {
+    content: "";
+    position: absolute;
+    top: 16px;
+    right: 13px;
+    width: 12px;
+    height: 8px;
+    background-image: url("../img/icons-sprite/arrow-down.svg");
+    background-repeat: no-repeat;
+    border-style: none;
+    border-color: transparent;
+    border-width: 0;
+    margin-top: 0;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  // иконка, когда селекты открываются
+  .choices[data-type*="select-one"].is-open::after {
+    margin-top: 0;
+    border-color: transparent;
+    transform: rotate(180deg);
+    transition: transform 0.2s ease-in-out;
+  }
+
+  // выпадающий список с селектами в закрытом состоянии
+  .choices__list.choices__list--dropdown {
+    transform: translateY(-10px);
+    opacity: 0;
+    transition: 0.1s ease-in-out;
+  }
+
+  // выпадающий список с селектами открывается
+  .is-open .choices__list--dropdown {
+    z-index: 1;
+    outline: 1px solid $light-grey;
+    background-color: transparent;
+    border-radius: 6px;
+    border: none;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: 0.2s ease-in-out;
+
+    @media (max-width: 1440px) {
+      background-color: $black;
+    }
+  }
+
+  //  селекты
+  .choices__list--dropdown .choices__item--selectable,
+  .choices__list[aria-expanded] .choices__item--selectable {
+    padding: 10px 10px 10px 20px;
+    font-size: 16px;
+    color: $light-grey;
+  }
+
+  //  выделенный селект
+  .choices__list--dropdown .choices__item--selectable.is-highlighted,
+  .choices__list[aria-expanded] .choices__item--selectable.is-highlighted {
+    background: rgba(255, 255, 255, 0.2) !important;
+    color: $white;
+  }
+
+  //  текст внутри выделенного селекта
+  .choices__list--dropdown .choices__item--selectable.is-highlighted::after {
+    display: none;
+  }
+
+  // ! ========================================= чекбоксы =========================================
+
+  // .gallery__chekbox
+  &-chekbox {
+    display: flex;
+    flex-direction: column;
+    color: $white;
+
+    // .gallery-chekbox__label
+    &__label {
+      position: relative;
+      margin-bottom: 13px;
+    }
+
+    // .gallery-chekbox__label:last-child
+    &__label:last-child {
+      margin-bottom: 0;
+    }
+
+    // .gallery-chekbox__input
+    &__input {
+      position: absolute;
+      left: 0px;
+      top: 3px;
+      opacity: 0;
+
+      &:checked + .gallery-chekbox__span::after {
+        opacity: 1;
+      }
+
+      &:focus + .gallery-chekbox__span {
+        color: $light-purple;
+        transition: color 0.2s ease-in-out;
+      }
+
+      &:focus + .gallery-chekbox__span::before {
+        outline: 1px solid $light-purple;
+        transition: outline 0.2s ease-in-out;
+      }
+    }
+
+    // .gallery-chekbox__span
+    &__span {
+      padding-left: 23px;
+      display: flex;
+      align-items: center;
+
+      font-family: $font-regular;
+      font-weight: 400;
+      font-size: 16px;
+      color: $white;
+      cursor: pointer;
+      transition: 0.2s linear;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        display: inline-flex;
+        align-items: center;
+        width: 12px;
+        height: 12px;
+        outline: 1px solid $white;
+        border-radius: 3px;
+        transition: outline 0.2s ease-in-out;
+      }
+
+      &::after {
+        content: url("../img/icons-sprite/checkbox.svg");
+        position: absolute;
+        left: 4px;
+        top: -4px;
+        opacity: 0;
+        transition: 0.2s linear;
+      }
+
+      &:hover::before {
+        outline: 1px solid $light-purple;
+      }
+
+      &:active {
+        color: $light-purple;
+        transition: color 0.2s ease-in-out;
+      }
+    }
+  }
+}
+
+// ! ========================================= свайпер =========================================
+
+.gallery-swiper {
+  // .gallery-swiper__container
+  &__container {
+    position: relative;
+
+    @media (max-width: 576px) {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  }
+
+  // .gallery-swiper__buttons
+  &__buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 130px;
+    margin: 24px 0px 30px 3px;
+
+    @media (max-width: 1024px) {
+      max-width: 131px;
+      margin: 25px 0px 30px 1px;
+    }
+
+    @media (max-width: 768px) {
+      max-width: 130px;
+      margin: 24px 0 30px 0px;
+    }
+
+    @media (max-width: 576px) {
+      margin: 22px auto;
+      min-width: 130px;
+    }
+  }
+
+  // .gallery-swiper__btn-prev
+  // .gallery-swiper__btn-next
+  &__btn-prev,
+  &__btn-next {
+    position: static;
+    margin-top: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    margin-top: 0;
+    z-index: 10;
+    background-color: $grey;
+    color: transparent;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.2s, outline 0.2s ease-in-out;
+
+    &:hover {
+      background-color: $purple;
+      transition: background-color 0.2s ease-in-out;
+    }
+
+    &:active {
+      background-color: $dark-purple;
+      transition: background-color 0.2s, outline 0.2s ease-in-out;
+    }
+
+    &:focus-visible {
+      background-color: $dark-purple;
+      outline: 2px solid $white;
+      outline-offset: -2px;
+      transition: background-color 0.2s, outline 0.2s ease-in-out;
+    }
+  }
+
+  // .gallery-swiper__btn-prev:after
+  // .gallery-swiper__btn-next:after
+  &__btn-prev:after,
+  &__btn-next:after {
+    content: none;
+  }
+
+  // .gallery-swiper__btn-svg
+  &__btn-svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  // .gallery-swiper__pagination
+  &__pagination {
+    position: static;
+    top: 0;
+    bottom: auto;
+    width: auto;
+    font-size: 18px;
+    color: $white;
+
+    @media (max-width: 1024px) {
+      font-size: 15px;
+    }
+  }
+
+  // .gallery-swiper__slide-wrap
+  &__slide-wrap {
+    padding: 3px;
+  }
+
+  // .gallery-swiper__link
+  &__link {
+    display: block;
+    max-width: 100%;
+    background: transparent;
+    position: relative;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, outline 0.2s ease-in-out;
+
+    & img {
+      display: flex;
+
+      @media (max-width: 576px) {
+        margin: 0 auto;
+      }
+    }
+
+    // .gallery-swiper__link::before
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+    }
+
+    // .gallery-swiper__link::active::before
+    &:active {
+      &::before {
+        content: "";
+        // transform: scale(1);
+        opacity: 1;
+        visibility: visible;
+        background: linear-gradient(0deg, rgba(194, 131, 243, 0.4), rgba(194, 131, 243, 0.4));
+        transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+      }
+    }
+
+    // .gallery-swiper__link::after
+    &::after {
+      content: "";
+      position: absolute;
+      top: 25px;
+      right: 25px;
+      bottom: 25px;
+      left: 25px;
+      opacity: 0;
+      visibility: hidden;
+      background: rgba(0, 0, 0, 0.5);
+      background-image: url("../img/icons-sprite/hover.svg");
+      background-position: center center;
+      background-repeat: no-repeat;
+      transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+    }
+
+    // .gallery-swiper__link::hover::after
+    &:hover {
+      &::after {
+        content: "";
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+      }
+    }
+
+    // .gallery-swiper__link::focus-visible
+    &:focus-visible {
+      outline: 3px solid $dark-purple;
+      transition: outline 0.2s ease-in-out;
+    }
+  }
+}

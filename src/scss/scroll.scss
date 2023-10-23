@@ -1,0 +1,13 @@
+.simplebar-track.simplebar-vertical {
+  top: 40px;
+  right: 19px;
+  width: 2px;
+  height: 220px;
+  background-color: $black;
+  visibility: visible !important;
+
+  .simplebar-scrollbar {
+    display: block !important;
+    background-color: $white;
+  }
+}
